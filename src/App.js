@@ -11,6 +11,8 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Store from './components/Store'
 import LaunchIndex from './components/LaunchIndex'
+import LaunchShoe from './components/LaunchShoe'
+
 
 
 
@@ -24,7 +26,7 @@ function App() {
     <Route path="/" element={<Home/>} />
     <Route path="Store" element={<Store/>} >
       <Route path="/" element={<LaunchIndex/>}/>
-      {/* <Route path=":slug" element={<LaunchShoe/>}/> */}
+      <Route path=":slug" element={<LaunchShoe/>}/>
 
 
 </Route>
