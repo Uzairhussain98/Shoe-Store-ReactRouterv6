@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import {
     Link,
     } from 'react-router-dom';
+import image from './logo1.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,10 +28,10 @@ export default function Header() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-        
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
+        <img src={image} alt='logo' style={{height: '50px' , width : '100px'}}/>
+          {/* <Typography variant="h6" className={classes.title}>
+            Nike Shoe Store
+          </Typography> */}
           <Link to="/">Home</Link>
         <Link to="/Store">Store</Link> 
         </Toolbar>

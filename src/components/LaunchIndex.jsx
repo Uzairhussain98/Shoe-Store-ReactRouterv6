@@ -70,7 +70,7 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
           title="Shoe"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" >
             {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -83,12 +83,14 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
 
       <CardActions>
 
-        <Button size="small" color="primary">
+        <Button size="large" color="primary" >
           Add to Cart
         </Button>
+        <Link to={`/Store/${slug}`}>
         <Button size="small" color="primary">
           More Info
         </Button>
+        </Link>
       </CardActions>
     </Card>
        )
