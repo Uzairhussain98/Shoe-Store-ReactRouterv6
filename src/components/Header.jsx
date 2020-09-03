@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import './Link.css'
 import {
     Link,
     } from 'react-router-dom';
@@ -32,8 +33,8 @@ export default function Header() {
           {/* <Typography variant="h6" className={classes.title}>
             Nike Shoe Store
           </Typography> */}
-          <Link to="/">Home</Link>
-        <Link to="/Store">Store</Link> 
+          <Link style={{marginLeft:'850px'}} className={'plus'} to="/">Home</Link>
+        <Link className={'plus'} to="/Store">Store</Link> 
         </Toolbar>
       </AppBar>
     </div>

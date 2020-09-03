@@ -1,10 +1,13 @@
-import React from 'react'
+import React ,{useRef} from 'react'
 import './Home.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import image from './sh2.png'
 import Typography from '@material-ui/core/Typography';
+import useWebAnimations , {backInLeft , backInRight} from "@wellyshen/use-web-animations";
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,18 +26,21 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
 
+  const { ref, playState } = useWebAnimations({...backInLeft});
+
+
 
   return (
-    <div className='home'>
+    <div className='home'> 
      <Grid container spacing={0}>
           <Grid item xs={6}>
-            <div style={{textAlign:'center'}}>
-              <img style={{marginTop:'-20px' , height:'650px' , width:'700px'}} src={image} alt='shoe'/>
+            <div ref={ref} style={{textAlign:'center'}}>
+              <img  style={{marginTop:'-20px' , height:'650px' , width:'700px'}} src={image} alt='shoe'/>
                </div>
           </Grid>
         <Grid item xs={6}>
           <div style={{textAlign:'center'}}>
-          <Typography style={{fontFamily :'Syne' , marginTop: '80px'}} variant="h2"  gutterBottom>
+          <Typography  style={{fontFamily :'Syne' , marginTop: '80px'}} variant="h2"  gutterBottom>
         Welcome To ! 
       </Typography>
           <Typography style={{fontFamily :'Syne' , marginTop: '-20px'}} variant="h2"  gutterBottom>
