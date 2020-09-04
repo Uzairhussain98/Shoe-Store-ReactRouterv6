@@ -2,12 +2,31 @@ import React from 'react'
 import {
     useParams,
     } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 
 const LaunchShoe = () => {
     const { slug } = useParams();
     const shoe = shoes[slug]
-  
+    const classes = useStyles();
+
 
 
 
@@ -19,9 +38,34 @@ const LaunchShoe = () => {
          const {name , img} = shoe;
 
       return(
-      <div>
-        <h2>{name}</h2>
-        <img src={img} alt={name}/>
+      <div >
+        <Grid container spacing={2}>
+
+        <Grid item xs={6}>
+        <Paper  className={classes.root} elevation={3} style={{ textAlign:"center" ,height:'603px',marginLeft:'10px', marginTop:'20px' , marginBottom : '10px'}}>
+        <Typography variant="h3">{name}</Typography>
+        <br/>
+        <Typography variant="h6" gutterBottom>Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colours and crisp details, it lets you ride in first-class comfort.
+        </Typography>
+<br/>
+<br/>
+<Typography variant="h5"> Colour Shown: White/Black/Wolf Grey </Typography>
+<br/>
+<Typography variant="h5"> Style: 921826-101 </Typography>
+
+<Button style={{width:'150px', height:'50px', marginTop:'50px'}} variant="contained" color="primary">
+  Add To Cart
+</Button>
+        </Paper>
+        </Grid>
+        
+        <Grid item xs={6}>
+          <Paper elevation={3} className={classes.root} style={{marginRight:'10px', marginTop:'20px' , marginBottom : '10px'}}>
+        <img src={img} alt={name} style={{height:'600px' , width:'100%'}}  />
+        </Paper>
+        </Grid>
+       
+        </Grid>
 
       </div>
 

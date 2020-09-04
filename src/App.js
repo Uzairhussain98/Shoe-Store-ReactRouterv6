@@ -4,14 +4,16 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Outlet,
-  useParams
+
 } from 'react-router-dom';
 import Header from './components/Header'
 import Home from './components/Home'
 import Store from './components/Store'
 import LaunchIndex from './components/LaunchIndex'
 import LaunchShoe from './components/LaunchShoe'
+import Cart from './components/Cart'
+import About from './components/About'
+
 
 
 
@@ -29,7 +31,13 @@ function App() {
       <Route path=":slug" element={<LaunchShoe/>}/>
 
 
+
 </Route>
+
+<Route path="Cart" element={<Cart/>}/>
+<Route path="About" element={<About/>}/>
+
+
     {/* <Route path="*" element={<NotFound/>}/> */}
    </Routes>
   </Router>

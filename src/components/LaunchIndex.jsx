@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 
 
  const LaunchIndex = () => {
-
+  
   const classes = useStyles();
 
 
@@ -60,7 +60,8 @@ const useStyles = makeStyles({
 
 const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
   return(
-  
+      <div>
+        <br/>
       <Card key={slug} className={classes.root}>
         <Link to={`/Store/${slug}`}>
       <CardActionArea>
@@ -93,6 +94,7 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
         </Link>
       </CardActions>
     </Card>
+    </div>
        )
 
 

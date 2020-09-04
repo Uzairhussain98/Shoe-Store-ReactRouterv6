@@ -7,7 +7,7 @@ import {
 const Store = () => {
   return (
     <div>
-        This Is A Store
+        
         <Outlet/>
 
       

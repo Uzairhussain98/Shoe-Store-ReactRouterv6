@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import './Link.css'
 import {
     Link,
@@ -33,8 +33,13 @@ export default function Header() {
           {/* <Typography variant="h6" className={classes.title}>
             Nike Shoe Store
           </Typography> */}
-          <Link style={{marginLeft:'850px'}} className={'plus'} to="/">Home</Link>
+          <Link style={{marginLeft:'830px'}} className={'plus'} to="/">Home</Link>
         <Link className={'plus'} to="/Store">Store</Link> 
+        <Link className={'plus'} to="/About">About</Link> 
+        <Link className={'plus'} to="/Cart"><ShoppingCartIcon /></Link> 
+
+
+        
         </Toolbar>
       </AppBar>
     </div>

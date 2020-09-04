@@ -1,32 +1,17 @@
-import React ,{useRef} from 'react'
+import React  from 'react'
 import './Home.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import image from './sh2.png'
 import Typography from '@material-ui/core/Typography';
-import useWebAnimations , {backInLeft , backInRight} from "@wellyshen/use-web-animations";
+import useWebAnimations , {backInLeft } from "@wellyshen/use-web-animations";
 
 
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
 
 
 
 const Home = () => {
-  const classes = useStyles();
 
-  const { ref, playState } = useWebAnimations({...backInLeft});
+  const { ref } = useWebAnimations({...backInLeft});
 
 
 
@@ -49,7 +34,7 @@ const Home = () => {
       <Typography style={{marginRight:'20px', textAlign:'center'}} variant="h6" gutterBottom>
       If you loved to wear luxury brand footwear then you are in right place to getting versatile
      and chic Nike shoes in Pakistan. Now brighten up your look with this quick and elegant footwear. 
-     Welcome to shoesonline.com the only online store which is manufactured all types of Nike shoes for
+     Welcome to nike.surge.sh the only online store which is manufactured all types of Nike shoes for
      men and women.
        </Typography>
 
