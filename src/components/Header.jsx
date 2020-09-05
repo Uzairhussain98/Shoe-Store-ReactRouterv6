@@ -33,7 +33,7 @@ export default function Header() {
           {/* <Typography variant="h6" className={classes.title}>
             Nike Shoe Store
           </Typography> */}
-          <Link style={{marginLeft:'830px'}} className={'plus'} to="/">Home</Link>
+          <Link style={{marginLeft:'810px'}} className={'plus'} to="/">Home</Link>
         <Link className={'plus'} to="/Store">Store</Link> 
         <Link className={'plus'} to="/About">About</Link> 
         <Link className={'plus'} to="/Cart"><ShoppingCartIcon /></Link> 

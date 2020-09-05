@@ -75,8 +75,7 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
             {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          The Nike Air Max 95 Premium adds a floral touch to its human body-inspired design. This icon mixes unbelievable comfort with head-turning style.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -84,11 +83,11 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
 
       <CardActions>
 
-        <Button size="large" color="primary" >
+        <Button size="medium" variant="contained" color="primary" >
           Add to Cart
         </Button>
         <Link to={`/Store/${slug}`}>
-        <Button size="small" color="primary">
+        <Button size="medium" variant="outlined" color="primary">
           More Info
         </Button>
         </Link>

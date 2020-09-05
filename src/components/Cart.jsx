@@ -2,8 +2,8 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <div>
-       <h1> Hello from Cart </h1>
+    <div style={{textAlign:"center"}}>
+       <h1> Cart Is Empty </h1>
       
     </div>
   )
