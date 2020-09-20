@@ -7,7 +7,7 @@ import { Button } from '@material-ui/core';
 
  
  function CartProduct({id , image , name}) {
-    const[{}, dispatch] = useStateValue();
+    const[, dispatch] = useStateValue();
 
 
 
