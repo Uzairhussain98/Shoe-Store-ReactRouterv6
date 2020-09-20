@@ -5,7 +5,7 @@ import './Cart.css'
 import { Button } from '@material-ui/core';
 
 const Cart = () => {
-  const [{ basket}, dispatch] = useStateValue();
+  const [{ basket}, ] = useStateValue();
 
   return (
     <div className="cart">
