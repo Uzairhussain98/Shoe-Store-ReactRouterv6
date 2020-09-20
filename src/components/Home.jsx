@@ -18,12 +18,12 @@ const Home = () => {
   return (
     <div className='home'> 
      <Grid container spacing={0}>
-          <Grid item xs={6}>
+          <Grid item xs={6} sm={6}>
             <div ref={ref} style={{textAlign:'center'}}>
               <img  style={{marginTop:'-20px' , height:'650px' , width:'700px'}} src={image} alt='shoe'/>
                </div>
           </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} sm={6}>
           <div style={{textAlign:'center'}}>
           <Typography  style={{fontFamily :'Syne' , marginTop: '80px'}} variant="h2"  gutterBottom>
         Welcome To ! 

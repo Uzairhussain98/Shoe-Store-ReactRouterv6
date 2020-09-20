@@ -11,6 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Columns from 'react-columns';
+import { useStateValue } from './StateProvider';
 
 
 
@@ -31,22 +32,41 @@ const useStyles = makeStyles({
 
 
  const LaunchIndex = () => {
+
+
+
+  const[{basket }, dispatch] = useStateValue();
+
+  
+
+ 
+
+
+
+
+
   
   const classes = useStyles();
 
 
+
   const shoes = {
     "air-jordan-3-valor-blue": {
+      id : '001',
       name: "VALOUR BLUE",
       img:
         "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
     },
     "jordan-mars-270-london": {
+      id : '002',
+
       name: "JORDAN MARS 270 LONDON",
       img:
         "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?$SNKRS_COVER_WD$&align=0,1"
     },
     "air-jordan-1-zoom-racer-blue": {
+      id : '003',
+
       name: "RACER BLUE",
       img:
         "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
@@ -58,7 +78,29 @@ const useStyles = makeStyles({
 
 
 
-const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
+const LaunchI = (Object.entries(shoes).map(([slug , {name ,img,id }]) => {
+
+ 
+  const addToBasket =() => {
+    dispatch
+    ({
+      type: 'ADD_TO_BASKET',
+      item: {
+          id:id,
+          name: name,
+          image: img,
+         
+      }
+  })
+  };
+  console.log(basket)
+
+ 
+ 
+ 
+ 
+ 
+ 
   return(
       <div>
         <br/>
@@ -83,7 +125,7 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
 
       <CardActions>
 
-        <Button size="medium" variant="contained" color="primary" >
+        <Button onClick={addToBasket} size="medium" variant="contained" color="primary" >
           Add to Cart
         </Button>
         <Link to={`/Store/${slug}`}>
@@ -93,7 +135,12 @@ const LaunchI = (Object.entries(shoes).map(([slug , {name ,img }]) => {
         </Link>
       </CardActions>
     </Card>
+
+      
+
+
     </div>
+    
        )
 
 

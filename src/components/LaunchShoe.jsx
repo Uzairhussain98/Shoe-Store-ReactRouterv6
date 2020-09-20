@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { useStateValue } from './StateProvider';
 
 
 
@@ -23,9 +24,26 @@ const useStyles = makeStyles((theme) => ({
 
 
 const LaunchShoe = () => {
+  const[{basket }, dispatch] = useStateValue();
+
     const { slug } = useParams();
     const shoe = shoes[slug]
     const classes = useStyles();
+
+
+  const addToBasket =() => {
+    dispatch
+    ({
+      type: 'ADD_TO_BASKET',
+      item: {
+          id:id,
+          name: name,
+          image: img,
+         
+      }
+  })
+  };
+  console.log(basket)
 
 
 
@@ -35,7 +53,7 @@ const LaunchShoe = () => {
         <h1>Not Found</h1>
          ) }
 
-         const {name , img} = shoe;
+         const {name , img, id} = shoe;
 
       return(
       <div >
@@ -53,7 +71,7 @@ const LaunchShoe = () => {
 <br/>
 <Typography variant="h5"> Style: 921826-101 </Typography>
 
-<Button style={{width:'150px', height:'50px', marginTop:'50px'}} variant="contained" color="primary">
+<Button onClick={addToBasket} style={{width:'150px', height:'50px', marginTop:'50px'}} variant="contained" color="primary">
   Add To Cart
 </Button>
         </Paper>
@@ -79,19 +97,27 @@ export default LaunchShoe
 
 
 const shoes = {
-    "air-jordan-3-valor-blue": {
-      name: "VALOUR BLUE",
-      img:
-        "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
-    },
-    "jordan-mars-270-london": {
-      name: "JORDAN MARS 270 LONDON",
-      img:
-        "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?$SNKRS_COVER_WD$&align=0,1"
-    },
-    "air-jordan-1-zoom-racer-blue": {
-      name: "RACER BLUE",
-      img:
-        "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
-    }
-  };
+  "air-jordan-3-valor-blue": {
+    id : '001',
+    name: "VALOUR BLUE",
+    img:
+      "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
+  },
+  "jordan-mars-270-london": {
+    id : '002',
+
+    name: "JORDAN MARS 270 LONDON",
+    img:
+      "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?$SNKRS_COVER_WD$&align=0,1"
+  },
+  "air-jordan-1-zoom-racer-blue": {
+    id : '003',
+
+    name: "RACER BLUE",
+    img:
+      "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"
+  }
+};
+
+
+
